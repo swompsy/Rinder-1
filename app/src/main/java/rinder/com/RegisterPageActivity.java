@@ -8,29 +8,25 @@ import android.widget.Button;
 
 public class RegisterPageActivity extends AppCompatActivity {
 
-    Button backBtn;
-    Button registerBtn;
+    Button backButton;
+    Button registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_page);
 
-        init();
+        backButton = findViewById(R.id.backBtn);
+        registerButton = findViewById(R.id.registerBtn);
 
-        backBtn.setOnClickListener(e -> {
+        backButton.setOnClickListener(e -> {
             Intent homePage = new Intent(this, MainActivity.class);
             startActivity(homePage);
         });
 
-        registerBtn.setOnClickListener(e -> {
+        registerButton.setOnClickListener(e -> {
             Intent homePage = new Intent(this, MainActivity.class);
             startActivity(homePage);
         });
-    }
-
-    private void init(){
-        backBtn = findViewById(R.id.backBtn);
-        registerBtn = findViewById(R.id.registerBtn);
     }
 }
