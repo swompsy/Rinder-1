@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Rinder</string>
     <string name="login">Login</string>
-    <string name="username">      Username</string>
-    <string name="password">      Password</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
     <string name="forgotPass">Forgot Password</string>
     <string name="registerText">Don\'t have account? Register here!</string>
 </resources>
