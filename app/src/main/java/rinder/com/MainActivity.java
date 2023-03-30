@@ -20,16 +20,15 @@ public class MainActivity extends AppCompatActivity {
         return password.matches("^[a-zA-Z\\d!@$&*+=-]{10,}$");
     }
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        usernameInput = findViewById(R.id.usernameBar);
-        passwordInput = findViewById(R.id.passwordBar);
+//        usernameInput = findViewById(R.id.usernameBar);
+//        passwordInput = findViewById(R.id.passwordBar);
         Button loginButton = findViewById(R.id.loginButton);
-        Button forgotPasswordButton = findViewById(R.id.forgotPasswordButton);
+//        Button forgotPasswordButton = findViewById(R.id.forgotPasswordButton);
         Button registerButton = findViewById(R.id.registerButton);
 
         loginButton.setOnClickListener(v -> {
@@ -66,11 +65,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        forgotPasswordButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, ForgotPassActivity.class);
-            startActivity(intent);
-            finish();
-        });
+//        forgotPasswordButton.setOnClickListener(v -> {
+//            Intent intent = new Intent(MainActivity.this, ForgotPassActivity.class);
+//            startActivity(intent);
+//            finish();
+//        });
 
         registerButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, RegisterPageActivity.class);
