@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 //            Intent intent = new Intent(MainActivity.this, ForgotPassActivity.class);
 //            startActivity(intent);
 //            finish();
-//        });
+//        }); 
 
         registerButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, RegisterPageActivity.class);
