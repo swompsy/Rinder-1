@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".HomePageActivity">
 
+    <!--    <EditText-->
+<!--        android:id="@+id/SearchBar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:layout_marginHorizontal="30dp"-->
+<!--        android:background="@drawable/round_rectangle_shape"-->
+<!--        tools:ignore="MissingConstraints"-->
+<!--        tools:layout_editor_absoluteX="25dp"-->
+<!--        tools:layout_editor_absoluteY="16dp" />-->
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="863dp"
@@ -17,13 +27,19 @@
 
     <EditText
         android:id="@+id/SearchBar"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginHorizontal="30dp"
-        android:background="@drawable/round_rectangle_shape"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Search"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintWidth_percent="0.8" />
 
     <Button
         android:id="@+id/AlarmButton"
@@ -39,12 +55,12 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <SearchView
-        android:layout_width="57dp"
-        android:layout_height="49dp"
+        android:layout_width="49dp"
+        android:layout_height="30dp"
         android:layout_marginTop="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/SearchBar"
         app:layout_constraintEnd_toEndOf="@+id/SearchBar"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/SearchBar"
         app:layout_constraintTop_toTopOf="@+id/SearchBar"
         app:layout_constraintVertical_bias="0.0" />
