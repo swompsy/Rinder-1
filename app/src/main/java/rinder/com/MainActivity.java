@@ -20,13 +20,14 @@ public class MainActivity extends AppCompatActivity {
         return password.matches("^[a-zA-Z\\d!@$&*+=-]{10,}$");
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        usernameInput = findViewById(R.id.usernameBar);
-//        passwordInput = findViewById(R.id.passwordBar);
+        usernameInput = findViewById(R.id.editText);
+        passwordInput = findViewById(R.id.userPassword);
         Button loginButton = findViewById(R.id.loginButton);
 //        Button forgotPasswordButton = findViewById(R.id.forgotPasswordButton);
         Button registerButton = findViewById(R.id.registerButton);
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
             //kalau benar semua
             if (isValidUsername(username) && isValidPassword(password)) {
-                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                Intent intent = new Intent(MainActivity.this, HomePageActivity.class);
                 startActivity(intent);
                 finish();
             } else {
