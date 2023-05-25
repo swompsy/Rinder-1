@@ -6,4 +6,11 @@
     <string name="forgotPass">Forgot Password</string>
     <string name="registerText">Don\'t have account? Register here!</string>
     <string name="alarm">Alarm</string>
+    <string name="privacypolicy">Privacy &amp; Policy</string>
+    <string name="termsconditions">Terms &amp; Conditions</string>
+    <string name="BACK">BACK</string>
+    <string name="REGISTER">REGISTER</string>
+    <string name="fullname">Fullname</string>
+    <string name="dob">Date of Birth</string>
+    <string name="email">Email</string>
 </resources>
