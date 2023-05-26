@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,91 +12,120 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp"
         android:gravity="center_vertical"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        android:layout_marginTop="100dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:text="Fullname" />
+            android:text="@string/fullname" />
 
         <EditText
             android:id="@+id/FullnameFill"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:layout_height="52dp"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/round_rectangle_shape" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:text="Username" />
+            android:text="@string/username" />
 
         <EditText
-            android:id="@+id/usernameFill"
+            android:id="@+id/UsernameFill"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:layout_height="52dp"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/round_rectangle_shape" />
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email"
+            android:text="@string/email"
             android:layout_marginHorizontal="30dp"/>
 
         <EditText
-            android:id="@+id/emailFill"
+            android:id="@+id/EmailFill"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:layout_height="52dp"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/round_rectangle_shape" />
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password"
+            android:text="@string/password"
             android:layout_marginHorizontal="30dp"/>
 
         <EditText
-            android:id="@+id/passwordFill"
+            android:id="@+id/PasswordFill"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:layout_height="52dp"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/round_rectangle_shape" />
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date of Birth"
+            android:text="@string/dob"
             android:layout_marginHorizontal="30dp"/>
 
         <EditText
-            android:id="@+id/DateofBirthfill"
+            android:id="@+id/DOBFill"
+            android:layout_width="match_parent"
+            android:paddingStart="10dp"
+            android:layout_height="52dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/round_rectangle_shape" />
+
+        <CheckBox
+            android:id="@+id/privacypolicy"
+            android:layout_marginHorizontal="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:layout_marginBottom="20dp"/>
+            android:text="@string/privacypolicy" />
+
+<!--        <CheckBox-->
+<!--            android:id="@+id/termsconditions"-->
+<!--            android:layout_marginHorizontal="30dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/termsconditions" />-->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:gravity="center">
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_marginTop="30dp">
 
             <Button
                 android:id="@+id/backBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
-                android:text="BACK" />
+                android:text="@string/BACK" />
 
             <Button
                 android:id="@+id/registerBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
-                android:text="REGISTER" />
+                android:text="@string/REGISTER" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
