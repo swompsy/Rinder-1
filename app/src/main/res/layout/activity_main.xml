@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,6 +10,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:text="Welcome to Rinder"
         android:textAlignment="center"
         android:textColor="@color/purple"
@@ -26,6 +26,7 @@
         android:id="@+id/imageView"
         android:layout_width="125dp"
         android:layout_height="125dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/logo_purple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,6 +39,7 @@
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:layout_gravity="center"
+        android:layout_marginTop="50dp"
         android:background="@drawable/round_rectangle_shape"
         android:hint="@string/username"
         android:inputType="text"
@@ -56,8 +58,8 @@
         android:layout_gravity="center_horizontal"
         android:background="@drawable/round_rectangle_shape"
         android:hint="@string/password"
-        android:textSize="11sp"
         android:paddingStart="10dp"
+        android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -70,14 +72,13 @@
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/login_button"
         android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
@@ -92,22 +93,21 @@
         app:layout_constraintTop_toBottomOf="@+id/userPassword"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
+    <TextView
         android:id="@+id/registerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="@null"
         android:clickable="true"
         android:onClick="clickHandler"
         android:text="@string/registerText"
         android:textColor="@color/purple"
-        android:textSize="11sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/userPassword"
+        app:layout_constraintVertical_bias="0.955" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
