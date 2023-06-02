@@ -6,63 +6,74 @@ import android.widget.TextView;
 import android.widget.Button;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 import android.os.CountDownTimer;
+import android.view.View;
 
 
 public class AlarmActivity extends AppCompatActivity {
-    private TextView alarmTimeTextView;
+    private TextView approximateTimeTextView;
     private TextView arrivalTimeTextView;
 
     private CountDownTimer countDownTimer;
+    private Calendar currentTime;
+    private int initialMinutes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm);
 
-        alarmTimeTextView = findViewById(R.id.alarmTimeTextView);
-        arrivalTimeTextView = findViewById(R.id.ArrivalTimeTextView);
+        approximateTimeTextView = findViewById(R.id.approximateTimeTextView);
+        arrivalTimeTextView = findViewById(R.id.arrivalTimeTextView);
         Button snoozeButton = findViewById(R.id.snoozeButton);
         Button turnOffButton = findViewById(R.id.turnOffButton);
 
-        // Get the current time
-        Calendar currentTime = Calendar.getInstance();
+        currentTime = Calendar.getInstance();
+        initialMinutes = 7;
+        updateApproximateTime(initialMinutes);
 
-        // Add 7 minutes to the current time
-        int minutes = 7;
-        currentTime.add(Calendar.MINUTE, minutes);
+        snoozeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                countDownTimer.cancel();
 
-        // Format the new time
+                int additionalMinutes = 5;
+                initialMinutes += additionalMinutes;
+                updateApproximateTime(initialMinutes);
+
+                startCountdownTimer(initialMinutes);
+            }
+        });
+
+        // ... other code ...
+
+        startCountdownTimer(initialMinutes);
+    }
+
+    private void updateApproximateTime(int minutes) {
+        String approximateTime = minutes + " minutes";
+        approximateTimeTextView.setText(approximateTime);
+
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
-        String alarmTime = sdf.format(currentTime.getTime());
+        Calendar updatedTime = (Calendar) currentTime.clone();
+        updatedTime.add(Calendar.MINUTE, minutes);
+        String arrivalTime = "You Will be Arriving at " + sdf.format(updatedTime.getTime());
+        arrivalTimeTextView.setText(arrivalTime);
+    }
 
-        // Set the updated time to the TextView
-        alarmTimeTextView.setText(alarmTime);
-
-        // Set the arrival time to the TextView
-        String arrivalText = "You will be arriving in " + minutes + " minutes ";
-        arrivalTimeTextView.setText(arrivalText);
-
-        // Calculate the duration in milliseconds
+    private void startCountdownTimer(int minutes) {
         long durationInMillis = minutes * 60 * 1000;
-
         countDownTimer = new CountDownTimer(durationInMillis, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                // Calculate the remaining time in minutes and seconds
                 int minutes = (int) (millisUntilFinished / (1000 * 60));
-                int seconds = (int) ((millisUntilFinished / 1000) % 60);
-
-                // Update the arrival time
-                String arrivalText = "You will be arriving in " + minutes + " minutes";
-                arrivalTimeTextView.setText(arrivalText);
+                updateApproximateTime(minutes);
             }
+
             @Override
             public void onFinish() {
-                // Perform any actions when the countdown finishes
-                alarmTimeTextView.setText("00:00");
+                approximateTimeTextView.setText("00:00");
                 // Add your desired actions here (e.g., play alarm sound, display notification)
             }
         };

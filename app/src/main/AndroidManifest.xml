@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
@@ -13,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Rinder"
         tools:targetApi="33">
+        <activity
+            android:name=".RingingActivity"
+            android:exported="false" />
         <activity
             android:name=".AlarmActivity"
             android:exported="false" />

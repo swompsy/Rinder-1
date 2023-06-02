@@ -6,20 +6,18 @@
     tools:context=".AlarmActivity">
 
     <TextView
-        android:id="@+id/alarmTimeTextView"
+        android:id="@+id/approximateTimeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="32sp"
-        android:text="00:00"
         android:layout_centerInParent="true" />
 
     <TextView
-        android:id="@+id/ArrivalTimeTextView"
+        android:id="@+id/arrivalTimeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="80dp"
         android:textSize="20sp"
-        tools:text="You will be arriving in X minutes"
         android:layout_centerInParent="true" />
 
     <Button
