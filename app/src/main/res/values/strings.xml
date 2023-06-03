@@ -3,7 +3,7 @@
     <string name="login">Login</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="forgotPass">Forgot Password</string>
+    <string name="forgotPass">Forgot Password?</string>
     <string name="registerText">Don\'t have account? Register here!</string>
     <string name="alarm">Alarm</string>
     <string name="privacypolicy">Privacy &amp; Policy</string>
@@ -13,4 +13,6 @@
     <string name="fullname">Fullname</string>
     <string name="dob">Date of Birth</string>
     <string name="email">Email</string>
+    <string name="alarm_time">Alarm Time: %s</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoidG9sb25nc3lwbGlzIiwiYSI6ImNsaTZ5NXdoYzBrNHkzZnI0MDNmeTdjbXkifQ.NG-CWziZnSvQO26j4zzVmg</string>
 </resources>

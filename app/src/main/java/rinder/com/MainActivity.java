@@ -2,12 +2,16 @@ package rinder.com;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.content.Intent;
+import android.text.SpannableString;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         return password.matches("^[a-zA-Z\\d!@$&*+=-]{10,}$");
     }
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
         usernameInput = findViewById(R.id.editText);
         passwordInput = findViewById(R.id.userPassword);
         Button loginButton = findViewById(R.id.loginButton);
-//        Button forgotPasswordButton = findViewById(R.id.forgotPasswordButton);
-        Button registerButton = findViewById(R.id.registerButton);
 
         loginButton.setOnClickListener(v -> {
             String username = usernameInput.getText().toString();
@@ -66,16 +67,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        forgotPasswordButton.setOnClickListener(v -> {
-//            Intent intent = new Intent(MainActivity.this, ForgotPassActivity.class);
-//            startActivity(intent);
-//            finish();
-//        });
-
-        registerButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, RegisterPageActivity.class);
-            startActivity(intent);
-            finish();
-        });
+        // Create a clickable hyperlink for the "Register" button
+        TextView registerTextView = findViewById(R.id.registerButton);
+        String registerText = getResources().getString(R.string.registerText);
+        SpannableString spannableString = new SpannableString(registerText);
+        ClickableSpan clickableSpan = new ClickableSpan() {
+            @Override
+            public void onClick(View view) {
+                // Handle the click event for the "Register" text
+                Intent intent = new Intent(MainActivity.this, RegisterPageActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        };
+        int startIndex = registerText.indexOf("here!");
+        int endIndex = startIndex + "here!".length();
+        spannableString.setSpan(clickableSpan, startIndex, endIndex, 0);
+        registerTextView.setText(spannableString);
+        registerTextView.setMovementMethod(LinkMovementMethod.getInstance());
     }
 }
