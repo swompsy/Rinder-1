@@ -14,5 +14,5 @@
     <string name="dob">Date of Birth</string>
     <string name="email">Email</string>
     <string name="alarm_time">Alarm Time: %s</string>
-    <string name="mapbox_access_token">pk.eyJ1IjoidG9sb25nc3lwbGlzIiwiYSI6ImNsaTZ5NXdoYzBrNHkzZnI0MDNmeTdjbXkifQ.NG-CWziZnSvQO26j4zzVmg</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoidG9sb25nc3lwbGlzIiwiYSI6ImNsaWcwbmE1MTA1bjIzcHA1MXFoOXQwZzkifQ.N0Mqb1fWBDc1lRzjto74VQ</string>
 </resources>
