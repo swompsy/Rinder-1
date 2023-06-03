@@ -1,24 +1,63 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
     tools:context=".AlarmActivity">
 
+    <ImageView
+        android:id="@+id/clock"
+        android:layout_width="15dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="100dp"
+        app:srcCompat="@drawable/clock" />
+
     <TextView
         android:id="@+id/approximateTimeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="32sp"
-        android:layout_centerInParent="true" />
+        android:textSize="50sp"
+        android:textColor="@color/purple"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@id/clock"
+        android:layout_marginTop="-100dp" />
+
+    <TextView
+        android:id="@+id/youWillBeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You will be"
+        android:textSize="40sp"
+        android:textColor="@color/purple"
+        android:layout_below="@id/clock"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/arrivingAtTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Arriving at"
+        android:textSize="40sp"
+        android:textColor="@color/purple"
+        android:layout_below="@id/youWillBeTextView"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/arrivalTimeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="80dp"
-        android:textSize="20sp"
-        android:layout_centerInParent="true" />
+        android:textSize="40sp"
+        android:textColor="@color/purple"
+        android:layout_below="@id/arrivingAtTextView"
+        android:layout_centerHorizontal="true" />
+
 
     <Button
         android:id="@+id/snoozeButton"
