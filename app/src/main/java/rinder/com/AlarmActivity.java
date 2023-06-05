@@ -15,7 +15,6 @@ import android.os.CountDownTimer;
 public class AlarmActivity extends AppCompatActivity {
     private TextView approximateTimeTextView;
     private TextView arrivalTimeTextView;
-
     private CountDownTimer countDownTimer;
     private Calendar currentTime;
     private int initialMinutes;
@@ -40,7 +39,7 @@ public class AlarmActivity extends AppCompatActivity {
             countDownTimer.cancel();
             int additionalMinutes = 5;
             initialMinutes += additionalMinutes;
-            remainingMinutes = initialMinutes;
+            remainingMinutes += additionalMinutes + 1;
             updateApproximateTime();
             startCountdownTimer(remainingMinutes);
         });
@@ -49,7 +48,7 @@ public class AlarmActivity extends AppCompatActivity {
             Intent homePage = new Intent(this, HomePageActivity.class);
             startActivity(homePage);
         });
-        startCountdownTimer(initialMinutes);
+        startCountdownTimer(remainingMinutes);
     }
 
     private void updateApproximateTime() {
@@ -71,8 +70,6 @@ public class AlarmActivity extends AppCompatActivity {
                 remainingMinutes = (int) (millisUntilFinished / (1000 * 60));
                 updateApproximateTime();
             }
-
-            @SuppressLint("SetTextI18n")
             @Override
             public void onFinish() {
                 approximateTimeTextView.setText("00:00");
