@@ -1,6 +1,9 @@
 package rinder.com;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Button;
@@ -8,16 +11,14 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 import android.os.CountDownTimer;
-import android.view.View;
-
 
 public class AlarmActivity extends AppCompatActivity {
     private TextView approximateTimeTextView;
     private TextView arrivalTimeTextView;
-
     private CountDownTimer countDownTimer;
     private Calendar currentTime;
     private int initialMinutes;
+    private int remainingMinutes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,46 +32,44 @@ public class AlarmActivity extends AppCompatActivity {
 
         currentTime = Calendar.getInstance();
         initialMinutes = 7;
-        updateApproximateTime(initialMinutes);
+        remainingMinutes = initialMinutes;
+        updateApproximateTime();
 
-        snoozeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                countDownTimer.cancel();
-
-                int additionalMinutes = 5;
-                initialMinutes += additionalMinutes;
-                updateApproximateTime(initialMinutes);
-
-                startCountdownTimer(initialMinutes);
-            }
+        snoozeButton.setOnClickListener(v -> {
+            countDownTimer.cancel();
+            int additionalMinutes = 5;
+            initialMinutes += additionalMinutes;
+            remainingMinutes += additionalMinutes + 1;
+            updateApproximateTime();
+            startCountdownTimer(remainingMinutes);
         });
 
-        // ... other code ...
-
-        startCountdownTimer(initialMinutes);
+        turnOffButton.setOnClickListener(v -> {
+            Intent homePage = new Intent(this, HomePageActivity.class);
+            startActivity(homePage);
+        });
+        startCountdownTimer(remainingMinutes);
     }
 
-    private void updateApproximateTime(int minutes) {
-        String approximateTime = minutes + " minutes";
+    private void updateApproximateTime() {
+        String approximateTime = remainingMinutes + " minutes";
         approximateTimeTextView.setText(approximateTime);
 
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
         Calendar updatedTime = (Calendar) currentTime.clone();
-        updatedTime.add(Calendar.MINUTE, minutes);
-        String arrivalTime = "You Will be Arriving at " + sdf.format(updatedTime.getTime());
+        updatedTime.add(Calendar.MINUTE, initialMinutes);
+        String arrivalTime = sdf.format(updatedTime.getTime());
         arrivalTimeTextView.setText(arrivalTime);
     }
 
     private void startCountdownTimer(int minutes) {
-        long durationInMillis = minutes * 60 * 1000;
+        long durationInMillis = (long) minutes * 60 * 1000;
         countDownTimer = new CountDownTimer(durationInMillis, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                int minutes = (int) (millisUntilFinished / (1000 * 60));
-                updateApproximateTime(minutes);
+                remainingMinutes = (int) (millisUntilFinished / (1000 * 60));
+                updateApproximateTime();
             }
-
             @Override
             public void onFinish() {
                 approximateTimeTextView.setText("00:00");
