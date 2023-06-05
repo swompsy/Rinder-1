@@ -13,30 +13,35 @@ public class user implements Serializable{
     public static final String TABLE_USERS = "users";
     public static final String KEY_ID = "userId";
     private static final String KEY_NAME = "fullName", KEY_UNAME = "userName", KEY_EMAIL = "email", KEY_PASS = "password", KEY_DOB = "dateOfBirth", KEY_VERIFIED = "verified";
-    public static final String CREATE_TABLE_USERS = String.format("CREATE TABLE IF NOT EXIST %s (%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT);",TABLE_USERS, KEY_ID, KEY_NAME, KEY_UNAME, KEY_EMAIL, KEY_PASS, KEY_DOB, KEY_VERIFIED);
+//    public static final String CREATE_TABLE_USERS = String.format("CREATE TABLE IF NOT EXISTS %s (%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT);"
+//            ,TABLE_USERS, KEY_ID, KEY_NAME, KEY_UNAME, KEY_EMAIL, KEY_PASS, KEY_DOB);
+
+    public static final String CREATE_TABLE_USERS =
+            String.format("CREATE TABLE IF NOT EXISTS %s (%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT, %s TEXT);",
+                    TABLE_USERS, KEY_ID, KEY_UNAME, KEY_EMAIL, KEY_PASS);
 
     public static void INSERT(user data){
         ContentValues val = new ContentValues();
-        val.put(KEY_NAME, data.getFullName());
+//        val.put(KEY_NAME, data.getFullName());
         val.put(KEY_UNAME, data.getUserName());
         val.put(KEY_EMAIL, data.getEmail());
         val.put(KEY_PASS, data.getPassword());
-        val.put(KEY_DOB, data.getDOB());
-        val.put(KEY_VERIFIED, data.getVerified());
+//        val.put(KEY_DOB, data.getDOB());
+//        val.put(KEY_VERIFIED, data.getVerified());
         Database.sqlite.insert(TABLE_USERS, val);
     }
 
     public static user GET_USER(String email, String password){
-        Cursor curr = Database.sqlite.read(TABLE_USERS, new String[] {KEY_ID, KEY_NAME, KEY_UNAME, KEY_EMAIL, KEY_PASS, KEY_DOB, KEY_VERIFIED}, KEY_EMAIL + " = ?", new String[] {email}, null);
+        Cursor curr = Database.sqlite.read(TABLE_USERS, new String[] {KEY_ID, KEY_UNAME, KEY_EMAIL, KEY_PASS}, KEY_EMAIL + " = ?", new String[] {email}, null);
         if(curr != null && curr.moveToFirst() && curr.getCount() > 0){
             int currID = Integer.parseInt(curr.getString(0));
-            String currFullName = curr.getString(1);
-            String currUserName = curr.getString(2);
-            String currEmail = curr.getString(3);
-            String currPass = curr.getString(4);
-            String currDOB = curr.getString(5);
-            boolean currVerified = Boolean.parseBoolean(curr.getString(6));
-            return new user(currID, currFullName, currUserName, currEmail, currPass, currDOB, currVerified);
+//            String currFullName = curr.getString(1);
+            String currUserName = curr.getString(1);
+            String currEmail = curr.getString(2);
+            String currPass = curr.getString(3);
+//            String currDOB = curr.getString(5);
+//            boolean currVerified = Boolean.parseBoolean(curr.getString(6));
+            return new user(currID, currUserName, currEmail, currPass);
         }
         return null;
     }
@@ -81,6 +86,13 @@ public class user implements Serializable{
         this.verified = verified;
     }
 
+    public user(int ID, String userName, String email, String password){
+        this.ID = ID;
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+    }
+
     public user(String fullName, String userName, String email, String password, String dateOfBirth){
         this.fullName = fullName;
         this.userName = userName;
@@ -118,9 +130,7 @@ public class user implements Serializable{
         return email;
     }
 
-    public void setEmail(String email){
-        this.email = email;
-    }
+    public void setEmail(String email){this.email = email;}
 
     public String getPassword(){
         return password;
