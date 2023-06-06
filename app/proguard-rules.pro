@@ -19,3 +19,9 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-obfuscationdictionary "C:\Users\mewza\AppData\Local\Android\Sdk\tools\proguard\examples\dictionaries\compact.txt"
+-classobfuscationdictionary "C:\Users\mewza\AppData\Local\Android\Sdk\tools\proguard\examples\dictionaries\compact.txt"
+-packageobfuscationdictionary "C:\Users\mewza\AppData\Local\Android\Sdk\tools\proguard\examples\dictionaries\compact.txt"
+-mergeinterfacesaggressively
+-overloadaggressively
