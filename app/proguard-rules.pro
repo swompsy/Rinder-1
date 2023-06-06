@@ -20,8 +20,8 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--obfuscationdictionary "C:\Users\prk\AppData\Local\Android\Sdk\tools\proguard\examples\dictionaries\compact.txt"
--classobfuscationdictionary "C:\Users\prk\AppData\Local\Android\Sdk\tools\proguard\examples\dictionaries\compact.txt"
--packageobfuscationdictionary "C:\Users\prk\AppData\Local\Android\Sdk\tools\proguard\examples\dictionaries\compact.txt"
+-obfuscationdictionary "C:\Users\mewza\AppData\Local\Android\Sdk\tools\proguard\examples\dictionaries\compact.txt"
+-classobfuscationdictionary "C:\Users\mewza\AppData\Local\Android\Sdk\tools\proguard\examples\dictionaries\compact.txt"
+-packageobfuscationdictionary "C:\Users\mewza\AppData\Local\Android\Sdk\tools\proguard\examples\dictionaries\compact.txt"
 -mergeinterfacesaggressively
 -overloadaggressively
