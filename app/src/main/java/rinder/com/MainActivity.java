@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
             if (uname.isEmpty() || pass.isEmpty())
                 return Toast.makeText(this, "All fields should be filled", Toast.LENGTH_SHORT);
             else if (isValidUsername(uname)){
-                return Toast.makeText(this, "Please enter a valid username", Toast.LENGTH_SHORT);
+                return Toast.makeText(this, "Please enter a valid email", Toast.LENGTH_SHORT);
             }
             else if (isValidPassword(pass)){
                 return Toast.makeText(this, "Please enter a valid password", Toast.LENGTH_SHORT);

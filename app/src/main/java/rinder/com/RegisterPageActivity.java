@@ -28,12 +28,6 @@ public class RegisterPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register_page);
         Database.sqlite = new Database(this);
 
-//        backButton = findViewById(R.id.backBtn);
-//        backButton.setOnClickListener(e -> {
-//            Intent homePage = new Intent(this, MainActivity.class);
-//            startActivity(homePage);
-//        });
-
         registerButton = findViewById(R.id.registerBtn);
         registerButton.setOnClickListener(e -> {
             hook();
@@ -104,7 +98,7 @@ public class RegisterPageActivity extends AppCompatActivity {
 
     public static boolean isValidDateOfBirth(String dob) {
         // Check the length and format of the input string
-        if (dob.length() != 10 || dob.charAt(4) != '-' || dob.charAt(7) != '-') {
+        if (dob.length() != 10 || dob.charAt(4) != '/' || dob.charAt(7) != '/') {
             return false;
         }
 
