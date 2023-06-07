@@ -1,9 +1,75 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".RingingActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/clock"
+        android:layout_width="15dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="100dp"
+        app:srcCompat="@drawable/clock" />
+
+    <TextView
+        android:id="@+id/youhavearrivedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You Have Arrived"
+        android:textSize="40sp"
+        android:textColor="@color/purple"
+        android:layout_below="@id/clock"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/atyourTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="at Your"
+        android:textSize="40sp"
+        android:textColor="@color/purple"
+        android:layout_below="@id/youhavearrivedTextView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/DestinationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Destination!"
+        android:textSize="40sp"
+        android:textColor="@color/purple"
+        android:layout_below="@id/atyourTextView"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:id="@+id/turnOffButton"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/x_mark"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintVertical_bias="0.5"
+        android:background="@null"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/DestinationTextView"/>
+
+    <TextView
+        android:textSize="24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Turn Off"
+        android:textColor="@color/purple"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/turnOffButton"
+        />
+
+</RelativeLayout>
