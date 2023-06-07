@@ -5,8 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import com.mapbox.maps.MapView;
-import com.mapbox.maps.Style;
+
 
 public class HomePageActivity extends AppCompatActivity {
 
