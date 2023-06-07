@@ -6,17 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".HomePageActivity">
 
-
-    <com.mapbox.maps.MapView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    <com.mapbox.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        mapbox:mapbox_cameraTargetLat="37.386051"
-        mapbox:mapbox_cameraTargetLng="-122.083855"
-        mapbox:mapbox_cameraZoom="11.0"
-        />
+        app:mapbox_cameraTargetLat="37.386051"
+        app:mapbox_cameraTargetLng="-122.083855"
+        app:mapbox_cameraZoom="11.0" />
 
     <EditText
         android:id="@+id/SearchBar"
@@ -34,14 +30,27 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintWidth_percent="0.8" />
 
-    <Button
+    <ImageButton
         android:id="@+id/AlarmButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/notification"
+        app:layout_constraintTop_toBottomOf="@+id/SearchBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/StartNavButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintVertical_bias="0.5"
+        android:background="@null"/>
+
+    <Button
+        android:id="@+id/StartNavButton"
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="16dp"
         android:background="@drawable/login_button"
-        android:text="@string/alarm"
+        android:text="@string/startnav"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"

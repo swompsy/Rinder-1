@@ -160,10 +160,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         private boolean isValidUsername(String username) {
-            return username.matches("^[a-zA-Z\\d]{5,}$");
+            return username.matches("^[a-zA-Z\\d]$");
         }
         private boolean isValidPassword(String password) {
-            return password.matches("^[a-zA-Z\\d!@$&*+=-]{10,}$");
+            return password.matches("^[a-zA-Z\\d!@$&*+=-]$");
         }
 
 

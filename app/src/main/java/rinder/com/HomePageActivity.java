@@ -3,6 +3,7 @@ package rinder.com;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.widget.ImageButton;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
@@ -22,7 +23,7 @@ import com.mapbox.maps.plugin.locationcomponent.OnIndicatorPositionChangedListen
 
 public class HomePageActivity extends AppCompatActivity {
     private MapView mapView;
-    Button alarmButton;
+    ImageButton alarmButton;
     private OnIndicatorBearingChangedListener onIndicatorBearingChangedListener = new OnIndicatorBearingChangedListener() {
         @Override
         public void onIndicatorBearingChanged(double v) {
@@ -37,7 +38,6 @@ public class HomePageActivity extends AppCompatActivity {
             mapView.getMapboxMap().setCamera(new CameraOptions.Builder().center(point).build());
         }
     };
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,8 +61,6 @@ public class HomePageActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
-
-
     }
 
     private void initLocationComponent() {

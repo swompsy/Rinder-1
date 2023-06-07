@@ -31,7 +31,7 @@ public class AlarmActivity extends AppCompatActivity {
         Button turnOffButton = findViewById(R.id.turnOffButton);
 
         currentTime = Calendar.getInstance();
-        initialMinutes = 7;
+        initialMinutes = 1;
         remainingMinutes = initialMinutes;
         updateApproximateTime();
 
@@ -52,7 +52,7 @@ public class AlarmActivity extends AppCompatActivity {
     }
 
     private void updateApproximateTime() {
-        String approximateTime = remainingMinutes + " minutes";
+        String approximateTime = remainingMinutes + 1 + " minutes";
         approximateTimeTextView.setText(approximateTime);
 
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
@@ -72,8 +72,9 @@ public class AlarmActivity extends AppCompatActivity {
             }
             @Override
             public void onFinish() {
-                approximateTimeTextView.setText("00:00");
-                // Add your desired actions here (e.g., play alarm sound, display notification)
+                Intent intent = new Intent(AlarmActivity.this, RingingActivity.class);
+                startActivity(intent);
+                finish();
             }
         };
         countDownTimer.start();
