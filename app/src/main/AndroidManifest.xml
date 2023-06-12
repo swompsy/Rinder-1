@@ -24,7 +24,11 @@
             android:name=".RingingActivity"
             android:exported="false" />
         <activity
+            android:name=".PnPPageActivity"
+            android:exported="false" />
+        <activity
             android:name=".AlarmActivity"
+            android:launchMode="singleTop"
             android:exported="false" />
         <activity
             android:name=".HomePageActivity"

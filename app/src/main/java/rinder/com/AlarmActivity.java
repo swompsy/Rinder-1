@@ -38,8 +38,10 @@ public class AlarmActivity extends AppCompatActivity {
         updateApproximateTime();
 
         backButton.setOnClickListener(v -> {
-            Intent homePage = new Intent(this, HomePageActivity.class);
-            startActivity(homePage);
+            // Navigate back to the HomePageActivity
+            Intent intent = new Intent(AlarmActivity.this, HomePageActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // Clear the activity stack
+            startActivity(intent);
         });
 
         snoozeButton.setOnClickListener(v -> {
@@ -52,8 +54,11 @@ public class AlarmActivity extends AppCompatActivity {
         });
 
         turnOffButton.setOnClickListener(v -> {
-            Intent homePage = new Intent(this, HomePageActivity.class);
-            startActivity(homePage);
+            countDownTimer.cancel();
+            Intent intent = new Intent(AlarmActivity.this, HomePageActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // Clear the activity stack
+            startActivity(intent);
+            finish();
         });
         startCountdownTimer(remainingMinutes);
     }

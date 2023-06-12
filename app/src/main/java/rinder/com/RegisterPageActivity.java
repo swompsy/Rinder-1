@@ -5,9 +5,11 @@ import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -17,9 +19,7 @@ import rinder.com.mod.user;
 public class RegisterPageActivity extends AppCompatActivity {
 
     private Button backButton, registerButton;
-
     private EditText rname, runame, remail, rpass, rdob;
-
     private String name, uname, email, pass, dob;
 
     @Override
@@ -32,9 +32,9 @@ public class RegisterPageActivity extends AppCompatActivity {
         registerButton.setOnClickListener(e -> {
             hook();
             Toast toast = val();
-            if(toast != null){
+            if (toast != null) {
                 toast.show();
-            } else{
+            } else {
                 user.INSERT(new user(name, uname, email, pass, dob));
                 toast = success();
                 toast.show();
@@ -50,9 +50,15 @@ public class RegisterPageActivity extends AppCompatActivity {
             Intent homePage = new Intent(this, MainActivity.class);
             startActivity(homePage);
         });
+
+        CheckBox privacyPolicyCheckbox = findViewById(R.id.privacypolicy);
+        privacyPolicyCheckbox.setOnClickListener(v -> {
+            Intent pnpIntent = new Intent(RegisterPageActivity.this, PnPPageActivity.class);
+            startActivity(pnpIntent);
+        });
     }
 
-    private void hook(){
+    private void hook() {
         rname = findViewById(R.id.FullnameFill);
         name = rname.getText().toString();
         runame = findViewById(R.id.UsernameFill);
@@ -65,15 +71,15 @@ public class RegisterPageActivity extends AppCompatActivity {
         dob = rdob.getText().toString();
     }
 
-    private Toast val(){
+    private Toast val() {
         if (name.isEmpty() || uname.isEmpty() || email.isEmpty() || pass.isEmpty() || dob.isEmpty())
             return Toast.makeText(this, "All fields should be filled", Toast.LENGTH_SHORT);
-        else if (name.length()<5)
+        else if (name.length() < 5)
             return Toast.makeText(this, "Name length should be at least 5 characters", Toast.LENGTH_SHORT);
-        else if (uname.length()>25)
+        else if (uname.length() > 25)
             return Toast.makeText(this, "Username length should not exceed 25 characters", Toast.LENGTH_SHORT);
         else if (!email.endsWith(".com"))
-            return Toast.makeText(this, "Email should ends with '.com'", Toast.LENGTH_SHORT);
+            return Toast.makeText(this, "Email should end with '.com'", Toast.LENGTH_SHORT);
         else if (!alphanum(pass))
             return Toast.makeText(this, "Password should have letters and numbers", Toast.LENGTH_SHORT);
         else if (!isValidDateOfBirth(dob))
@@ -81,16 +87,16 @@ public class RegisterPageActivity extends AppCompatActivity {
         return null;
     }
 
-    private Toast success(){
+    private Toast success() {
         return Toast.makeText(this, "User successfully registered.", Toast.LENGTH_SHORT);
     }
 
-    private boolean alphanum(String str){
+    private boolean alphanum(String str) {
         boolean Char = false, Num = false;
-        for (int i=0; i<str.length(); i++) {
-            if (str.charAt(i) >= 'a' && str.charAt(i) <= 'z' ) Char = true;
-            if (str.charAt(i) >= 'A' && str.charAt(i) <= 'Z' ) Char = true;
-            if (str.charAt(i) >= '0' && str.charAt(i) <= '9' ) Num = true;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) >= 'a' && str.charAt(i) <= 'z') Char = true;
+            if (str.charAt(i) >= 'A' && str.charAt(i) <= 'Z') Char = true;
+            if (str.charAt(i) >= '0' && str.charAt(i) <= '9') Num = true;
             if (Char && Num) break;
         }
         return Char && Num;
@@ -119,6 +125,5 @@ public class RegisterPageActivity extends AppCompatActivity {
         }
 
         return true;
-
     }
 }

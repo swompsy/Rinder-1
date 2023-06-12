@@ -100,16 +100,10 @@
             android:layout_height="wrap_content"
             android:text="@string/privacypolicy" />
 
-<!--        <CheckBox-->
-<!--            android:id="@+id/termsconditions"-->
-<!--            android:layout_marginHorizontal="30dp"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/termsconditions" />-->
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
+
             android:gravity="center"
             android:layout_marginTop="30dp">
 
