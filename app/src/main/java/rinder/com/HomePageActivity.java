@@ -28,14 +28,14 @@ public class HomePageActivity extends AppCompatActivity {
         @Override
         public void onIndicatorBearingChanged(double v) {
             mapView.getMapboxMap().setCamera(
-                    new CameraOptions.Builder().bearing(v).build()
+                    new CameraOptions.Builder().bearing(v).zoom(15.0).build()
             );
         }
     };
     private OnIndicatorPositionChangedListener onIndicatorPositionChangedListener = new OnIndicatorPositionChangedListener() {
         @Override
         public void onIndicatorPositionChanged(@NonNull Point point) {
-            mapView.getMapboxMap().setCamera(new CameraOptions.Builder().center(point).build());
+            mapView.getMapboxMap().setCamera(new CameraOptions.Builder().center(point).zoom(15.0).build());
         }
     };
 

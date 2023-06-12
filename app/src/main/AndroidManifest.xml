@@ -21,9 +21,6 @@
         android:theme="@style/Theme.Rinder"
         tools:targetApi="33" >
         <activity
-            android:name=".PnPActivty"
-            android:exported="false" />
-        <activity
             android:name=".RingingActivity"
             android:exported="false" />
         <activity
