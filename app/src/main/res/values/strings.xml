@@ -13,7 +13,71 @@
     <string name="fullname">Fullname</string>
     <string name="dob">Date of Birth</string>
     <string name="email">Email</string>
+    <string name="Continue">Continue</string>
     <string name="alarm_time">Alarm Time: %s</string>
     <string name="mapbox_access_token">pk.eyJ1IjoidG9sb25nc3lwbGlzIiwiYSI6ImNsaWcwbmE1MTA1bjIzcHA1MXFoOXQwZzkifQ.N0Mqb1fWBDc1lRzjto74VQ</string>
     <string name="startnav">Start Navigation</string>
+    <string name="privacy_policy_content">
+    <![CDATA[
+            <h2>I. INFORMATION WE COLLECT</h2>
+            <p>The information Rinder collects depends on what Rinder Products or Services you use and how you use them. We collect information to provide better services to all of our users – from figuring out stuff like what’s the best route, to more complex things like calling emergency services when a crash is detected.</p>
+
+        <p><b>Note:</b> Failure to provide necessary information when requested may result in you not being able to fully utilize our Products and/or Services.</p>
+
+        <h3>Information you give us:</h3>
+        <ul>
+            <li>Account Information. Information required when setting up an Account, such as your name or email address. Bear in mind that false, incorrect, or outdated information may impair Rinder’s ability to provide you with the Services and to contact you when necessary. Rinder will explicitly indicate the fields for mandatory completion. If you do not enter the requisite data in these fields, you may not be able to register your Account or be provided with certain features.</li>
+            <li>Payment and Transaction Information. When you place an order for a Product or upgrade to a premium subscription, you’ll need to provide an email address, a first and last name, and/or a shipping address. Any payment information provided is processed by the relevant billing and/or payment processor. We may also collect information such as which version of the Product or subscription service you are using, the date and time that you activated your account, the duration of your subscription, the data related to any subscription cancellation request, and any in-app purchases you may make.</li>
+            <li>Optional Account Information. You may also customize your in-app map by labeling locations, such as “work” and “home,” to make it easy to spot your favorite places.</li>
+        </ul>
+
+        <h3>Information we collect as you use our services:</h3>
+        <p>Detailed location, travel, and route information. Location and route information are collected, for example, in the form of GPS signals (combined with a time-stamp), IP address, and other information from sensors and receivers on or around your device, on which the Application is installed and activated. This location and route information is saved to a route history of all the journeys you have made while using the Application. The types of location data we collect depend in part on your device and account settings.</p>
+
+        <h2>II. WHY RINDER COLLECTS DATA</h2>
+        <p>Rinder may use information collected from or provided by you for the following purposes:</p>
+        <ul>
+            <li>Use your location and route information and/or search query history to provide navigation services, best route choices, traffic alerts, and to provide information about sites, shops, and other places and attractions in your close vicinity.</li>
+            <li>To provide advertising services, including personalized ads.</li>
+            <li>We also use your information to ensure our services are working as intended, such as tracking outages or troubleshooting issues you report to us. And we use your information to improve the service or to develop new features or services. For example, Rinder may use your route information to improve the accuracy of its mapping and navigation data.</li>
+            <li>We use the information we collect to operate the Services and to customize your experience with the Services. For example, Rinder may use your “home” and “work” and other “favorites” information (if you choose to provide such information) or route history to offer routes based on how you’ve chosen to travel between favorite destinations in the past. Based on your past activity on the Services, we may also suggest drive predictions and common destinations where you use the app to navigate to and personalize your ETA.</li>
+            <li>We may also use the information to provide you with support and handle requests and complaints.</li>
+        </ul>
+
+        <h2>III. YOUR CHOICES ABOUT YOUR INFORMATION</h2>
+        <p>We believe in transparency and providing you with the opportunity to make important decisions about how your information is used, processed, stored, and shared as outlined in this Section.</p>
+
+        <p>You may modify your account information, update or amend your personal information (e.g., name, email address, or phone number), or change your password by logging in to your App, clicking on “Settings” and then “Account” (for Rinder) or “Manage Account” (for Tile or Jiobit Apps). You may also request deletion of your personal information through the app by clicking on “Settings”, then “Manage Account”, and finally by clicking on “Delete Account” and following the on-screen instructions.</p>
+
+        <h2>IV. HOW WE PROTECT YOUR INFORMATION</h2>
+        <p>Rinder cares about the security of your information and we take great efforts to protect your personal information. We cannot guarantee and you cannot reasonably expect that our databases will be immune from any wrongdoings, malfunctions, unlawful interceptions or access, or other kinds of abuse and misuse.</p>
+
+        <h3>A. Security</h3>
+        <p>We have implemented appropriate standards to reduce the risk of unauthorized or unlawful access to your personal information. No security system is impenetrable, and we cannot absolutely guarantee the security of our systems and your information.</p>
+
+        <p><b>Note:</b> We will never send you unsolicited messages or contact you by phone requesting sensitive information. This may include account ID, password, payment, or national ID numbers. Please note that emails and other communications you send to us are not encrypted, and we strongly advise you not to share any sensitive information through these means.</p>
+
+        <p>If any information under our control is compromised as a result of a breach of security, we will take reasonable steps to investigate the situation and where appropriate, notify the impacted individuals and take steps in accordance with any applicable laws and regulations.</p>
+
+        <h3>B. Accuracy and Confidentiality of Your Email Address and Password</h3>
+        <p>You are responsible for the secrecy of your password and ensuring the email address associated with your account(s) is accurate. We use your email address to contact you about service updates, changes to our policies, and account activities such as requests for your information. We recommend using a strong, unique password for this service. If you believe your account has been compromised, change your password immediately via the applicable app or website.</p>
+
+        <p><b>Note:</b> Rinder is not responsible for information or data transmitted to a third party as a result of a member providing an incorrect phone number or email address.</p>
+
+        <h3>C. Onward Transfer</h3>
+        <p>With respect to onward transfers to third-party agents acting on our behalf, Rinder remains liable should its agents process information in a manner inconsistent with the Privacy Shield Principles or other applicable laws. We may be required to disclose personal data in response to lawful requests by public authorities, including to meet national security or law enforcement requirements.</p>
+
+        <h2>V. CHANGES TO THIS PRIVACY POLICY</h2>
+        <p>Rinder may from time to time change the terms of this Privacy Policy. Substantial changes will take effect 30 days after Rinder has posted a:</p>
+        <ul>
+            <li>System message to users notifying them of changes to the Privacy Policy; and</li>
+            <li>Notification on the Website’s homepage or any other relevant web pages, explaining the changes to the Privacy Policy alongside a comparison of the “old” and “new” versions of the Privacy Policy.</li>
+        </ul>
+
+        <p>Other changes will take effect 7 days after their initial posting on the Website. However, if Rinder amends this Privacy Policy to comply with legal requirements, the amendments will become effective immediately upon their initial posting, or as required.</p>
+
+        <p>You agree to be bound by any of the changes made in the terms of this Privacy Policy. Continuing to use the Services will indicate your acceptance of the amended terms. If you do not agree with any of the amended terms, you must avoid any further use of the Services.</p>
+        ]]>
+</string>
+
 </resources>

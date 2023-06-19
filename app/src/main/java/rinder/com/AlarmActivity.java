@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Button;
 import java.text.SimpleDateFormat;
@@ -29,11 +30,19 @@ public class AlarmActivity extends AppCompatActivity {
         arrivalTimeTextView = findViewById(R.id.arrivalTimeTextView);
         Button snoozeButton = findViewById(R.id.snoozeButton);
         Button turnOffButton = findViewById(R.id.turnOffButton);
+        ImageButton backButton = findViewById(R.id.BackButton);
 
         currentTime = Calendar.getInstance();
         initialMinutes = 1;
         remainingMinutes = initialMinutes;
         updateApproximateTime();
+
+        backButton.setOnClickListener(v -> {
+            // Navigate back to the HomePageActivity
+            Intent intent = new Intent(AlarmActivity.this, HomePageActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // Clear the activity stack
+            startActivity(intent);
+        });
 
         snoozeButton.setOnClickListener(v -> {
             countDownTimer.cancel();
@@ -45,8 +54,11 @@ public class AlarmActivity extends AppCompatActivity {
         });
 
         turnOffButton.setOnClickListener(v -> {
-            Intent homePage = new Intent(this, HomePageActivity.class);
-            startActivity(homePage);
+            countDownTimer.cancel();
+            Intent intent = new Intent(AlarmActivity.this, HomePageActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // Clear the activity stack
+            startActivity(intent);
+            finish();
         });
         startCountdownTimer(remainingMinutes);
     }
